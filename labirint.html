@@ -1,0 +1,670 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>JDM Maze Chase</title>
+	<link rel="icon" type="image/x-icon" href="ikona.png">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<h1>JDM Maze Chase<h1>
+<div id="lab">
+<canvas id="myCanvas" width="484" height="484">
+</canvas>
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+
+	ctx.moveTo(2,2);ctx.lineTo(226,2);
+    ctx.moveTo(242,2);ctx.lineTo(482,2);
+    ctx.moveTo(82,18);ctx.lineTo(98,18);
+    ctx.moveTo(130,18);ctx.lineTo(178,18);
+    ctx.moveTo(210,18);ctx.lineTo(226,18);
+    ctx.moveTo(242,18);ctx.lineTo(274,18);
+    ctx.moveTo(322,18);ctx.lineTo(338,18);
+    ctx.moveTo(370,18);ctx.lineTo(402,18);
+    ctx.moveTo(434,18);ctx.lineTo(450,18);
+    ctx.moveTo(2,34);ctx.lineTo(18,34);
+    ctx.moveTo(114,34);ctx.lineTo(130,34);
+    ctx.moveTo(226,34);ctx.lineTo(242,34);
+    ctx.moveTo(258,34);ctx.lineTo(290,34);
+    ctx.moveTo(306,34);ctx.lineTo(354,34);
+    ctx.moveTo(418,34);ctx.lineTo(434,34);
+    ctx.moveTo(450,34);ctx.lineTo(482,34);
+    ctx.moveTo(18,50);ctx.lineTo(34,50);
+    ctx.moveTo(66,50);ctx.lineTo(98,50);
+    ctx.moveTo(130,50);ctx.lineTo(178,50);
+    ctx.moveTo(210,50);ctx.lineTo(226,50);
+    ctx.moveTo(242,50);ctx.lineTo(258,50);
+    ctx.moveTo(322,50);ctx.lineTo(338,50);
+    ctx.moveTo(370,50);ctx.lineTo(386,50);
+    ctx.moveTo(434,50);ctx.lineTo(450,50);
+    ctx.moveTo(34,66);ctx.lineTo(98,66);
+    ctx.moveTo(114,66);ctx.lineTo(162,66);
+    ctx.moveTo(178,66);ctx.lineTo(194,66);
+    ctx.moveTo(226,66);ctx.lineTo(242,66);
+    ctx.moveTo(258,66);ctx.lineTo(322,66);
+    ctx.moveTo(386,66);ctx.lineTo(434,66);
+    ctx.moveTo(466,66);ctx.lineTo(482,66);
+    ctx.moveTo(18,82);ctx.lineTo(34,82);
+    ctx.moveTo(66,82);ctx.lineTo(114,82);
+    ctx.moveTo(162,82);ctx.lineTo(226,82);
+    ctx.moveTo(242,82);ctx.lineTo(258,82);
+    ctx.moveTo(274,82);ctx.lineTo(290,82);
+    ctx.moveTo(306,82);ctx.lineTo(338,82);
+    ctx.moveTo(354,82);ctx.lineTo(370,82);
+    ctx.moveTo(402,82);ctx.lineTo(434,82);
+    ctx.moveTo(450,82);ctx.lineTo(466,82);
+    ctx.moveTo(34,98);ctx.lineTo(162,98);
+    ctx.moveTo(178,98);ctx.lineTo(242,98);
+    ctx.moveTo(258,98);ctx.lineTo(274,98);
+    ctx.moveTo(290,98);ctx.lineTo(306,98);
+    ctx.moveTo(338,98);ctx.lineTo(386,98);
+    ctx.moveTo(450,98);ctx.lineTo(482,98);
+    ctx.moveTo(2,114);ctx.lineTo(34,114);
+    ctx.moveTo(82,114);ctx.lineTo(130,114);
+    ctx.moveTo(162,114);ctx.lineTo(178,114);
+    ctx.moveTo(194,114);ctx.lineTo(242,114);
+    ctx.moveTo(258,114);ctx.lineTo(274,114);
+    ctx.moveTo(290,114);ctx.lineTo(306,114);
+    ctx.moveTo(322,114);ctx.lineTo(338,114);
+    ctx.moveTo(370,114);ctx.lineTo(386,114);
+    ctx.moveTo(18,130);ctx.lineTo(50,130);
+    ctx.moveTo(130,130);ctx.lineTo(162,130);
+    ctx.moveTo(178,130);ctx.lineTo(226,130);
+    ctx.moveTo(242,130);ctx.lineTo(258,130);
+    ctx.moveTo(274,130);ctx.lineTo(322,130);
+    ctx.moveTo(370,130);ctx.lineTo(450,130);
+    ctx.moveTo(34,146);ctx.lineTo(98,146);
+    ctx.moveTo(146,146);ctx.lineTo(162,146);
+    ctx.moveTo(178,146);ctx.lineTo(210,146);
+    ctx.moveTo(226,146);ctx.lineTo(242,146);
+    ctx.moveTo(274,146);ctx.lineTo(338,146);
+    ctx.moveTo(354,146);ctx.lineTo(370,146);
+    ctx.moveTo(418,146);ctx.lineTo(434,146);
+    ctx.moveTo(450,146);ctx.lineTo(466,146);
+    ctx.moveTo(18,162);ctx.lineTo(34,162);
+    ctx.moveTo(50,162);ctx.lineTo(114,162);
+    ctx.moveTo(162,162);ctx.lineTo(306,162);
+    ctx.moveTo(338,162);ctx.lineTo(386,162);
+    ctx.moveTo(402,162);ctx.lineTo(418,162);
+    ctx.moveTo(434,162);ctx.lineTo(450,162);
+    ctx.moveTo(34,178);ctx.lineTo(50,178);
+    ctx.moveTo(66,178);ctx.lineTo(82,178);
+    ctx.moveTo(114,178);ctx.lineTo(146,178);
+    ctx.moveTo(178,178);ctx.lineTo(194,178);
+    ctx.moveTo(242,178);ctx.lineTo(290,178);
+    ctx.moveTo(338,178);ctx.lineTo(434,178);
+    ctx.moveTo(18,194);ctx.lineTo(34,194);
+    ctx.moveTo(82,194);ctx.lineTo(130,194);
+    ctx.moveTo(146,194);ctx.lineTo(178,194);
+    ctx.moveTo(226,194);ctx.lineTo(258,194);
+    ctx.moveTo(274,194);ctx.lineTo(306,194);
+    ctx.moveTo(322,194);ctx.lineTo(338,194);
+    ctx.moveTo(370,194);ctx.lineTo(386,194);
+    ctx.moveTo(434,194);ctx.lineTo(466,194);
+    ctx.moveTo(2,210);ctx.lineTo(18,210);
+    ctx.moveTo(50,210);ctx.lineTo(98,210);
+    ctx.moveTo(114,210);ctx.lineTo(130,210);
+    ctx.moveTo(162,210);ctx.lineTo(194,210);
+    ctx.moveTo(210,210);ctx.lineTo(274,210);
+    ctx.moveTo(306,210);ctx.lineTo(322,210);
+    ctx.moveTo(354,210);ctx.lineTo(370,210);
+    ctx.moveTo(418,210);ctx.lineTo(434,210);
+    ctx.moveTo(450,210);ctx.lineTo(466,210);
+    ctx.moveTo(98,226);ctx.lineTo(130,226);
+    ctx.moveTo(146,226);ctx.lineTo(162,226);
+    ctx.moveTo(178,226);ctx.lineTo(210,226);
+    ctx.moveTo(226,226);ctx.lineTo(274,226);
+    ctx.moveTo(306,226);ctx.lineTo(322,226);
+    ctx.moveTo(370,226);ctx.lineTo(418,226);
+    ctx.moveTo(434,226);ctx.lineTo(450,226);
+    ctx.moveTo(466,226);ctx.lineTo(482,226);
+    ctx.moveTo(50,242);ctx.lineTo(66,242);
+    ctx.moveTo(82,242);ctx.lineTo(98,242);
+    ctx.moveTo(178,242);ctx.lineTo(194,242);
+    ctx.moveTo(210,242);ctx.lineTo(226,242);
+    ctx.moveTo(242,242);ctx.lineTo(258,242);
+    ctx.moveTo(290,242);ctx.lineTo(306,242);
+    ctx.moveTo(322,242);ctx.lineTo(338,242);
+    ctx.moveTo(354,242);ctx.lineTo(370,242);
+    ctx.moveTo(386,242);ctx.lineTo(402,242);
+    ctx.moveTo(2,258);ctx.lineTo(50,258);
+    ctx.moveTo(66,258);ctx.lineTo(82,258);
+    ctx.moveTo(98,258);ctx.lineTo(130,258);
+    ctx.moveTo(146,258);ctx.lineTo(178,258);
+    ctx.moveTo(194,258);ctx.lineTo(210,258);
+    ctx.moveTo(226,258);ctx.lineTo(242,258);
+    ctx.moveTo(274,258);ctx.lineTo(290,258);
+    ctx.moveTo(306,258);ctx.lineTo(322,258);
+    ctx.moveTo(354,258);ctx.lineTo(370,258);
+    ctx.moveTo(386,258);ctx.lineTo(434,258);
+    ctx.moveTo(18,274);ctx.lineTo(66,274);
+    ctx.moveTo(114,274);ctx.lineTo(146,274);
+    ctx.moveTo(210,274);ctx.lineTo(258,274);
+    ctx.moveTo(290,274);ctx.lineTo(386,274);
+    ctx.moveTo(402,274);ctx.lineTo(466,274);
+    ctx.moveTo(18,290);ctx.lineTo(66,290);
+    ctx.moveTo(98,290);ctx.lineTo(114,290);
+    ctx.moveTo(130,290);ctx.lineTo(146,290);
+    ctx.moveTo(162,290);ctx.lineTo(210,290);
+    ctx.moveTo(258,290);ctx.lineTo(290,290);
+    ctx.moveTo(338,290);ctx.lineTo(370,290);
+    ctx.moveTo(386,290);ctx.lineTo(402,290);
+    ctx.moveTo(434,290);ctx.lineTo(450,290);
+    ctx.moveTo(34,306);ctx.lineTo(50,306);
+    ctx.moveTo(98,306);ctx.lineTo(114,306);
+    ctx.moveTo(130,306);ctx.lineTo(162,306);
+    ctx.moveTo(178,306);ctx.lineTo(194,306);
+    ctx.moveTo(226,306);ctx.lineTo(258,306);
+    ctx.moveTo(322,306);ctx.lineTo(338,306);
+    ctx.moveTo(354,306);ctx.lineTo(370,306);
+    ctx.moveTo(418,306);ctx.lineTo(434,306);
+    ctx.moveTo(34,322);ctx.lineTo(66,322);
+    ctx.moveTo(82,322);ctx.lineTo(98,322);
+    ctx.moveTo(114,322);ctx.lineTo(130,322);
+    ctx.moveTo(146,322);ctx.lineTo(162,322);
+    ctx.moveTo(226,322);ctx.lineTo(242,322);
+    ctx.moveTo(258,322);ctx.lineTo(306,322);
+    ctx.moveTo(370,322);ctx.lineTo(482,322);
+    ctx.moveTo(18,338);ctx.lineTo(34,338);
+    ctx.moveTo(50,338);ctx.lineTo(82,338);
+    ctx.moveTo(98,338);ctx.lineTo(146,338);
+    ctx.moveTo(210,338);ctx.lineTo(226,338);
+    ctx.moveTo(242,338);ctx.lineTo(258,338);
+    ctx.moveTo(338,338);ctx.lineTo(354,338);
+    ctx.moveTo(386,338);ctx.lineTo(434,338);
+    ctx.moveTo(82,354);ctx.lineTo(98,354);
+    ctx.moveTo(130,354);ctx.lineTo(178,354);
+    ctx.moveTo(258,354);ctx.lineTo(274,354);
+    ctx.moveTo(290,354);ctx.lineTo(322,354);
+    ctx.moveTo(354,354);ctx.lineTo(370,354);
+    ctx.moveTo(402,354);ctx.lineTo(418,354);
+    ctx.moveTo(434,354);ctx.lineTo(466,354);
+    ctx.moveTo(2,370);ctx.lineTo(18,370);
+    ctx.moveTo(34,370);ctx.lineTo(82,370);
+    ctx.moveTo(178,370);ctx.lineTo(194,370);
+    ctx.moveTo(226,370);ctx.lineTo(258,370);
+    ctx.moveTo(274,370);ctx.lineTo(290,370);
+    ctx.moveTo(306,370);ctx.lineTo(338,370);
+    ctx.moveTo(370,370);ctx.lineTo(402,370);
+    ctx.moveTo(466,370);ctx.lineTo(482,370);
+    ctx.moveTo(18,386);ctx.lineTo(34,386);
+    ctx.moveTo(50,386);ctx.lineTo(66,386);
+    ctx.moveTo(98,386);ctx.lineTo(178,386);
+    ctx.moveTo(194,386);ctx.lineTo(226,386);
+    ctx.moveTo(258,386);ctx.lineTo(274,386);
+    ctx.moveTo(290,386);ctx.lineTo(306,386);
+    ctx.moveTo(386,386);ctx.lineTo(418,386);
+    ctx.moveTo(434,386);ctx.lineTo(466,386);
+    ctx.moveTo(2,402);ctx.lineTo(18,402);
+    ctx.moveTo(66,402);ctx.lineTo(130,402);
+    ctx.moveTo(162,402);ctx.lineTo(194,402);
+    ctx.moveTo(226,402);ctx.lineTo(290,402);
+    ctx.moveTo(322,402);ctx.lineTo(354,402);
+    ctx.moveTo(370,402);ctx.lineTo(386,402);
+    ctx.moveTo(402,402);ctx.lineTo(434,402);
+    ctx.moveTo(18,418);ctx.lineTo(50,418);
+    ctx.moveTo(130,418);ctx.lineTo(146,418);
+    ctx.moveTo(194,418);ctx.lineTo(226,418);
+    ctx.moveTo(242,418);ctx.lineTo(274,418);
+    ctx.moveTo(306,418);ctx.lineTo(322,418);
+    ctx.moveTo(338,418);ctx.lineTo(402,418);
+    ctx.moveTo(418,418);ctx.lineTo(434,418);
+    ctx.moveTo(2,434);ctx.lineTo(34,434);
+    ctx.moveTo(66,434);ctx.lineTo(82,434);
+    ctx.moveTo(114,434);ctx.lineTo(130,434);
+    ctx.moveTo(146,434);ctx.lineTo(178,434);
+    ctx.moveTo(210,434);ctx.lineTo(226,434);
+    ctx.moveTo(258,434);ctx.lineTo(274,434);
+    ctx.moveTo(290,434);ctx.lineTo(306,434);
+    ctx.moveTo(322,434);ctx.lineTo(370,434);
+    ctx.moveTo(402,434);ctx.lineTo(418,434);
+    ctx.moveTo(434,434);ctx.lineTo(482,434);
+    ctx.moveTo(2,450);ctx.lineTo(18,450);
+    ctx.moveTo(50,450);ctx.lineTo(98,450);
+    ctx.moveTo(130,450);ctx.lineTo(162,450);
+    ctx.moveTo(178,450);ctx.lineTo(210,450);
+    ctx.moveTo(226,450);ctx.lineTo(258,450);
+    ctx.moveTo(274,450);ctx.lineTo(322,450);
+    ctx.moveTo(338,450);ctx.lineTo(354,450);
+    ctx.moveTo(370,450);ctx.lineTo(402,450);
+    ctx.moveTo(418,450);ctx.lineTo(466,450);
+    ctx.moveTo(18,466);ctx.lineTo(34,466);
+    ctx.moveTo(114,466);ctx.lineTo(130,466);
+    ctx.moveTo(162,466);ctx.lineTo(226,466);
+    ctx.moveTo(306,466);ctx.lineTo(386,466);
+    ctx.moveTo(402,466);ctx.lineTo(434,466);
+    ctx.moveTo(450,466);ctx.lineTo(466,466);
+    ctx.moveTo(2,482);ctx.lineTo(242,482);
+    ctx.moveTo(258,482);ctx.lineTo(482,482);
+    ctx.moveTo(2,2);ctx.lineTo(2,482);
+    ctx.moveTo(18,18);ctx.lineTo(18,34);
+    ctx.moveTo(18,50);ctx.lineTo(18,98);
+    ctx.moveTo(18,130);ctx.lineTo(18,162);
+    ctx.moveTo(18,178);ctx.lineTo(18,194);
+    ctx.moveTo(18,210);ctx.lineTo(18,242);
+    ctx.moveTo(18,274);ctx.lineTo(18,354);
+    ctx.moveTo(18,386);ctx.lineTo(18,402);
+    ctx.moveTo(34,18);ctx.lineTo(34,50);
+    ctx.moveTo(34,66);ctx.lineTo(34,82);
+    ctx.moveTo(34,98);ctx.lineTo(34,114);
+    ctx.moveTo(34,162);ctx.lineTo(34,178);
+    ctx.moveTo(34,194);ctx.lineTo(34,258);
+    ctx.moveTo(34,306);ctx.lineTo(34,322);
+    ctx.moveTo(34,354);ctx.lineTo(34,386);
+    ctx.moveTo(34,402);ctx.lineTo(34,418);
+    ctx.moveTo(34,434);ctx.lineTo(34,466);
+    ctx.moveTo(50,18);ctx.lineTo(50,66);
+    ctx.moveTo(50,82);ctx.lineTo(50,98);
+    ctx.moveTo(50,114);ctx.lineTo(50,146);
+    ctx.moveTo(50,162);ctx.lineTo(50,242);
+    ctx.moveTo(50,322);ctx.lineTo(50,354);
+    ctx.moveTo(50,386);ctx.lineTo(50,450);
+    ctx.moveTo(50,466);ctx.lineTo(50,482);
+    ctx.moveTo(66,2);ctx.lineTo(66,50);
+    ctx.moveTo(66,98);ctx.lineTo(66,130);
+    ctx.moveTo(66,178);ctx.lineTo(66,210);
+    ctx.moveTo(66,226);ctx.lineTo(66,274);
+    ctx.moveTo(66,290);ctx.lineTo(66,322);
+    ctx.moveTo(66,354);ctx.lineTo(66,370);
+    ctx.moveTo(66,402);ctx.lineTo(66,418);
+    ctx.moveTo(66,450);ctx.lineTo(66,466);
+    ctx.moveTo(82,18);ctx.lineTo(82,34);
+    ctx.moveTo(82,114);ctx.lineTo(82,146);
+    ctx.moveTo(82,210);ctx.lineTo(82,242);
+    ctx.moveTo(82,258);ctx.lineTo(82,306);
+    ctx.moveTo(82,322);ctx.lineTo(82,354);
+    ctx.moveTo(82,370);ctx.lineTo(82,434);
+    ctx.moveTo(82,466);ctx.lineTo(82,482);
+    ctx.moveTo(98,18);ctx.lineTo(98,66);
+    ctx.moveTo(98,130);ctx.lineTo(98,146);
+    ctx.moveTo(98,162);ctx.lineTo(98,194);
+    ctx.moveTo(98,242);ctx.lineTo(98,274);
+    ctx.moveTo(98,306);ctx.lineTo(98,322);
+    ctx.moveTo(98,354);ctx.lineTo(98,386);
+    ctx.moveTo(98,418);ctx.lineTo(98,482);
+    ctx.moveTo(114,2);ctx.lineTo(114,34);
+    ctx.moveTo(114,50);ctx.lineTo(114,82);
+    ctx.moveTo(114,130);ctx.lineTo(114,162);
+    ctx.moveTo(114,226);ctx.lineTo(114,242);
+    ctx.moveTo(114,274);ctx.lineTo(114,306);
+    ctx.moveTo(114,338);ctx.lineTo(114,386);
+    ctx.moveTo(114,418);ctx.lineTo(114,466);
+    ctx.moveTo(130,34);ctx.lineTo(130,50);
+    ctx.moveTo(130,66);ctx.lineTo(130,82);
+    ctx.moveTo(130,114);ctx.lineTo(130,162);
+    ctx.moveTo(130,194);ctx.lineTo(130,210);
+    ctx.moveTo(130,226);ctx.lineTo(130,258);
+    ctx.moveTo(130,306);ctx.lineTo(130,322);
+    ctx.moveTo(130,354);ctx.lineTo(130,370);
+    ctx.moveTo(130,402);ctx.lineTo(130,434);
+    ctx.moveTo(146,18);ctx.lineTo(146,34);
+    ctx.moveTo(146,82);ctx.lineTo(146,114);
+    ctx.moveTo(146,162);ctx.lineTo(146,210);
+    ctx.moveTo(146,226);ctx.lineTo(146,242);
+    ctx.moveTo(146,274);ctx.lineTo(146,290);
+    ctx.moveTo(146,322);ctx.lineTo(146,338);
+    ctx.moveTo(146,370);ctx.lineTo(146,386);
+    ctx.moveTo(146,402);ctx.lineTo(146,418);
+    ctx.moveTo(146,450);ctx.lineTo(146,482);
+    ctx.moveTo(162,34);ctx.lineTo(162,50);
+    ctx.moveTo(162,66);ctx.lineTo(162,98);
+    ctx.moveTo(162,114);ctx.lineTo(162,178);
+    ctx.moveTo(162,210);ctx.lineTo(162,274);
+    ctx.moveTo(162,290);ctx.lineTo(162,322);
+    ctx.moveTo(162,338);ctx.lineTo(162,370);
+    ctx.moveTo(162,418);ctx.lineTo(162,450);
+    ctx.moveTo(178,18);ctx.lineTo(178,50);
+    ctx.moveTo(178,98);ctx.lineTo(178,130);
+    ctx.moveTo(178,178);ctx.lineTo(178,194);
+    ctx.moveTo(178,226);ctx.lineTo(178,242);
+    ctx.moveTo(178,258);ctx.lineTo(178,290);
+    ctx.moveTo(178,306);ctx.lineTo(178,354);
+    ctx.moveTo(178,370);ctx.lineTo(178,386);
+    ctx.moveTo(178,402);ctx.lineTo(178,434);
+    ctx.moveTo(178,450);ctx.lineTo(178,466);
+    ctx.moveTo(194,2);ctx.lineTo(194,66);
+    ctx.moveTo(194,178);ctx.lineTo(194,210);
+    ctx.moveTo(194,242);ctx.lineTo(194,274);
+    ctx.moveTo(194,306);ctx.lineTo(194,370);
+    ctx.moveTo(194,418);ctx.lineTo(194,450);
+    ctx.moveTo(210,18);ctx.lineTo(210,82);
+    ctx.moveTo(210,146);ctx.lineTo(210,194);
+    ctx.moveTo(210,210);ctx.lineTo(210,242);
+    ctx.moveTo(210,274);ctx.lineTo(210,386);
+    ctx.moveTo(210,402);ctx.lineTo(210,418);
+    ctx.moveTo(226,34);ctx.lineTo(226,50);
+    ctx.moveTo(226,130);ctx.lineTo(226,146);
+    ctx.moveTo(226,162);ctx.lineTo(226,194);
+    ctx.moveTo(226,242);ctx.lineTo(226,258);
+    ctx.moveTo(226,290);ctx.lineTo(226,306);
+    ctx.moveTo(226,338);ctx.lineTo(226,354);
+    ctx.moveTo(226,370);ctx.lineTo(226,402);
+    ctx.moveTo(226,418);ctx.lineTo(226,434);
+    ctx.moveTo(226,450);ctx.lineTo(226,466);
+    ctx.moveTo(242,18);ctx.lineTo(242,34);
+    ctx.moveTo(242,66);ctx.lineTo(242,130);
+    ctx.moveTo(242,274);ctx.lineTo(242,290);
+    ctx.moveTo(242,322);ctx.lineTo(242,370);
+    ctx.moveTo(242,386);ctx.lineTo(242,450);
+    ctx.moveTo(242,466);ctx.lineTo(242,482);
+    ctx.moveTo(258,34);ctx.lineTo(258,66);
+    ctx.moveTo(258,98);ctx.lineTo(258,114);
+    ctx.moveTo(258,130);ctx.lineTo(258,146);
+    ctx.moveTo(258,178);ctx.lineTo(258,194);
+    ctx.moveTo(258,242);ctx.lineTo(258,274);
+    ctx.moveTo(258,290);ctx.lineTo(258,306);
+    ctx.moveTo(258,370);ctx.lineTo(258,386);
+    ctx.moveTo(258,450);ctx.lineTo(258,482);
+    ctx.moveTo(274,50);ctx.lineTo(274,98);
+    ctx.moveTo(274,114);ctx.lineTo(274,130);
+    ctx.moveTo(274,194);ctx.lineTo(274,210);
+    ctx.moveTo(274,226);ctx.lineTo(274,290);
+    ctx.moveTo(274,306);ctx.lineTo(274,386);
+    ctx.moveTo(274,434);ctx.lineTo(274,466);
+    ctx.moveTo(290,2);ctx.lineTo(290,50);
+    ctx.moveTo(290,194);ctx.lineTo(290,242);
+    ctx.moveTo(290,258);ctx.lineTo(290,274);
+    ctx.moveTo(290,290);ctx.lineTo(290,306);
+    ctx.moveTo(290,338);ctx.lineTo(290,354);
+    ctx.moveTo(290,386);ctx.lineTo(290,434);
+    ctx.moveTo(290,466);ctx.lineTo(290,482);
+    ctx.moveTo(306,2);ctx.lineTo(306,18);
+    ctx.moveTo(306,34);ctx.lineTo(306,66);
+    ctx.moveTo(306,82);ctx.lineTo(306,114);
+    ctx.moveTo(306,162);ctx.lineTo(306,194);
+    ctx.moveTo(306,210);ctx.lineTo(306,226);
+    ctx.moveTo(306,242);ctx.lineTo(306,258);
+    ctx.moveTo(306,290);ctx.lineTo(306,338);
+    ctx.moveTo(306,354);ctx.lineTo(306,402);
+    ctx.moveTo(306,450);ctx.lineTo(306,466);
+    ctx.moveTo(322,98);ctx.lineTo(322,114);
+    ctx.moveTo(322,146);ctx.lineTo(322,210);
+    ctx.moveTo(322,274);ctx.lineTo(322,290);
+    ctx.moveTo(322,306);ctx.lineTo(322,354);
+    ctx.moveTo(322,386);ctx.lineTo(322,450);
+    ctx.moveTo(338,2);ctx.lineTo(338,18);
+    ctx.moveTo(338,50);ctx.lineTo(338,98);
+    ctx.moveTo(338,114);ctx.lineTo(338,162);
+    ctx.moveTo(338,194);ctx.lineTo(338,274);
+    ctx.moveTo(338,290);ctx.lineTo(338,322);
+    ctx.moveTo(338,338);ctx.lineTo(338,354);
+    ctx.moveTo(338,370);ctx.lineTo(338,386);
+    ctx.moveTo(338,450);ctx.lineTo(338,466);
+    ctx.moveTo(354,18);ctx.lineTo(354,82);
+    ctx.moveTo(354,98);ctx.lineTo(354,146);
+    ctx.moveTo(354,178);ctx.lineTo(354,258);
+    ctx.moveTo(354,306);ctx.lineTo(354,338);
+    ctx.moveTo(354,354);ctx.lineTo(354,402);
+    ctx.moveTo(370,18);ctx.lineTo(370,34);
+    ctx.moveTo(370,50);ctx.lineTo(370,82);
+    ctx.moveTo(370,130);ctx.lineTo(370,146);
+    ctx.moveTo(370,290);ctx.lineTo(370,306);
+    ctx.moveTo(370,322);ctx.lineTo(370,354);
+    ctx.moveTo(370,370);ctx.lineTo(370,402);
+    ctx.moveTo(370,418);ctx.lineTo(370,450);
+    ctx.moveTo(386,34);ctx.lineTo(386,50);
+    ctx.moveTo(386,66);ctx.lineTo(386,114);
+    ctx.moveTo(386,146);ctx.lineTo(386,162);
+    ctx.moveTo(386,194);ctx.lineTo(386,226);
+    ctx.moveTo(386,242);ctx.lineTo(386,322);
+    ctx.moveTo(386,338);ctx.lineTo(386,370);
+    ctx.moveTo(386,402);ctx.lineTo(386,418);
+    ctx.moveTo(386,434);ctx.lineTo(386,450);
+    ctx.moveTo(402,18);ctx.lineTo(402,66);
+    ctx.moveTo(402,98);ctx.lineTo(402,146);
+    ctx.moveTo(402,178);ctx.lineTo(402,226);
+    ctx.moveTo(402,306);ctx.lineTo(402,322);
+    ctx.moveTo(402,386);ctx.lineTo(402,402);
+    ctx.moveTo(402,418);ctx.lineTo(402,434);
+    ctx.moveTo(402,450);ctx.lineTo(402,466);
+    ctx.moveTo(418,2);ctx.lineTo(418,18);
+    ctx.moveTo(418,50);ctx.lineTo(418,66);
+    ctx.moveTo(418,82);ctx.lineTo(418,114);
+    ctx.moveTo(418,146);ctx.lineTo(418,178);
+    ctx.moveTo(418,194);ctx.lineTo(418,210);
+    ctx.moveTo(418,226);ctx.lineTo(418,258);
+    ctx.moveTo(418,274);ctx.lineTo(418,306);
+    ctx.moveTo(418,354);ctx.lineTo(418,386);
+    ctx.moveTo(418,434);ctx.lineTo(418,450);
+    ctx.moveTo(434,18);ctx.lineTo(434,50);
+    ctx.moveTo(434,66);ctx.lineTo(434,82);
+    ctx.moveTo(434,98);ctx.lineTo(434,130);
+    ctx.moveTo(434,146);ctx.lineTo(434,162);
+    ctx.moveTo(434,178);ctx.lineTo(434,194);
+    ctx.moveTo(434,210);ctx.lineTo(434,226);
+    ctx.moveTo(434,242);ctx.lineTo(434,258);
+    ctx.moveTo(434,290);ctx.lineTo(434,306);
+    ctx.moveTo(434,338);ctx.lineTo(434,386);
+    ctx.moveTo(434,402);ctx.lineTo(434,434);
+    ctx.moveTo(450,34);ctx.lineTo(450,82);
+    ctx.moveTo(450,114);ctx.lineTo(450,146);
+    ctx.moveTo(450,162);ctx.lineTo(450,178);
+    ctx.moveTo(450,210);ctx.lineTo(450,242);
+    ctx.moveTo(450,258);ctx.lineTo(450,274);
+    ctx.moveTo(450,306);ctx.lineTo(450,338);
+    ctx.moveTo(450,370);ctx.lineTo(450,386);
+    ctx.moveTo(450,402);ctx.lineTo(450,434);
+    ctx.moveTo(450,450);ctx.lineTo(450,466);
+    ctx.moveTo(466,2);ctx.lineTo(466,18);
+    ctx.moveTo(466,50);ctx.lineTo(466,66);
+    ctx.moveTo(466,114);ctx.lineTo(466,210);
+    ctx.moveTo(466,226);ctx.lineTo(466,306);
+    ctx.moveTo(466,338);ctx.lineTo(466,354);
+    ctx.moveTo(466,386);ctx.lineTo(466,418);
+    ctx.moveTo(482,2);ctx.lineTo(482,482);
+	ctx.lineWidth=2;
+	ctx.stroke();
+</script>
+</div>
+<div id="pot">
+<svg width="484" height="484">
+<path fill="none" stroke="#ff0000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" d="M234,2 234,10 282,10 282,26 250,26 250,42 234,42 234,58 218,58 218,74 234,74 234,90 170,90 170,106 154,106 154,122 138,122 138,106 74,106 74,138 58,138 58,106 42,106 42,122 10,122 10,170 26,170 26,186 42,186 42,250 58,250 58,266 10,266 10,362 26,362 26,346 42,346 42,362 58,362 58,346 74,346 74,362 90,362 90,394 202,394 202,410 186,410 186,442 170,442 170,458 154,458 154,474 234,474 234,458 250,458 250,482" class="lines"/>
+<circle r="7" cx="0" cy="0" fill="black" class="circle1" />
+<circle r="7" cx="0" cy="0" fill="red" class="circle2" /> 
+<path fill="none" stroke="#ff0000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" d="M234,2 234,10 282,10 282,26 250,26 250,42 234,42 234,58 218,58 218,74 234,74 234,90 170,90 170,106 154,106 154,122 138,122 138,106 74,106 74,138 58,138 58,106 42,106 42,122 10,122 10,170 26,170 26,186 42,186 42,250 58,250 58,266 10,266 10,362 26,362 26,346 42,346 42,362 58,362 58,346 74,346 74,362 90,362 90,394 202,394 202,410 186,410 186,442 170,442 170,458 154,458 154,474 234,474 234,458 250,458 250,482" class="lines1"/>
+</svg>
+</div>
+
+<button class="custom-btn btn-9" type="button" onclick="showSweetAlert()">Navodila</button>
+<select name="tezavnost" id="tezavnosti">
+	
+  <option value="ez">Težavnost: Lahka</option>
+  <option value="mid">Težavnost: Srednja</option>
+  <option value="hard">Težavnost: Težka</option>
+</select>
+<button class="custom-btn btn-9" type="button" onClick="window.location.reload();">Nova igra</button>
+
+<script>
+function showSweetAlert() {
+  Swal.fire({
+    title: 'Navodila:',
+    html: 'Namen igre je, da skozi labirint pobegbneš pred policijo, ki te lovi.<br><br>Najprej izberi težavnost igre (Prvotno bo nastavljena na "Lahka"). Ko boš pripravljen, začni pritiskati na tipko "Space", z vsakim pritiskom na tipko se tvoja figurica premakne po labirintu - hitreje kot boš pritiskal hitreje se bo premikala.<br><br> Policija te začne loviti s tri sekundnim zamikom. Če te ujame, je igre konec, če pa uspeš pobegniti, si zmagal.<br><br>Novo igro lahko zaženeš s pritiskom na gumb "Nova igra".',
+    iconHtml: '<img src="ikona.png">',
+    confirmButtonText: 'IGRAJ',
+	customClass: {
+      confirmButton: 'c-button'
+    } 
+  });
+}
+</script>
+
+<script>
+const path = document.querySelector('.lines');
+const circle = document.querySelector('.circle1');
+const pathLength = path.getTotalLength();
+let distance = 0;
+const svg = document.querySelector('svg');
+let lastX = null;
+let lastY = null;
+let lol = true;
+
+document.addEventListener('keydown', (event) => {
+  if (event.code === 'Space' && event.repeat === false && lol === true ) {
+    svg.appendChild(circle);
+    // Move the circle along the path by a fixed number of pixels
+    distance += 15;
+    // If the circle has reached the end of the path, start over from the beginning
+    if (distance > pathLength) {
+	lol = false;
+	circle.remove();
+		
+
+	
+      const gameOverr = document.createElementNS("http://www.w3.org/2000/svg", "text");
+          gameOverr.setAttribute("x", "50%");
+          gameOverr.setAttribute("y", "50%");
+          gameOverr.setAttribute("text-anchor", "middle");
+          gameOverr.setAttribute("font-size", "50px");
+          gameOverr.setAttribute("fill", "black");
+          gameOverr.textContent = "Pobeg uspel!";
+          svg.appendChild(gameOverr);
+          
+		  
+
+		  	  
+			
+    }
+    // Query a point at the new distance value
+    const point = path.getPointAtLength(distance);
+    // Update the circle coordinates
+    circle.setAttribute('cx', point.x);
+    circle.setAttribute('cy', point.y);
+
+    // Draw a line from the previous position to the current position of the circle
+    const x = point.x;
+    const y = point.y;
+    if (lastX !== null && lastY !== null) {
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      line.setAttribute("stroke", "black");
+      line.setAttribute("stroke-width", "5");
+      line.setAttribute("stroke-linecap", "round");
+      line.setAttribute("stroke-linejoin", "round");
+      line.setAttribute("fill", "none");
+      line.setAttribute("d", `M ${lastX},${lastY} L ${x},${y}`);
+	  
+      svg.appendChild(line);
+    }
+    lastX = x;
+    lastY = y;
+	
+	const circlee = document.querySelector('.circle2');
+    let isBlue = false;
+  
+    setInterval(() => {
+      if (isBlue) {
+        circlee.setAttribute('fill', 'red');
+      } else {
+        circlee.setAttribute('fill', 'blue');
+      }
+      isBlue = !isBlue;
+    }, 0);
+  }
+});
+
+
+// Query DOM Elements
+const path1 = document.querySelector('.lines1');
+const circle1 = document.querySelector('.circle2');
+// Move the second circle outside the SVG element
+circle1.remove();
+circle.remove();
+let animationStarted = false;
+
+
+const startAnimation = () => {
+	
+  if (!animationStarted) {
+	
+    // Create an object that gsap can animate
+    const val1 = { distance: 0 };
+	// Query the selected option in the drop-down menu
+    const difficulty = document.querySelector('#tezavnosti').value;
+    // Set the animation duration of circle1 based on the selected option
+    let duration;
+    switch (difficulty) {
+      case 'ez':
+        duration = 20;
+        break;
+      case 'mid':
+        duration = 15;
+        break;
+      case 'hard':
+        duration = 10;
+        break;
+      default:
+        duration = 20;
+    }
+	
+	
+    // Create a tween
+    gsap.to(val1, {
+      // Animate from distance 0 to the total distance
+      distance: path1.getTotalLength(),
+      // Loop the animation
+      repeat: 0,
+      // Make the animation lasts 5 seconds
+      duration,
+      // Function call on each frame of the animation
+      onUpdate: () => {
+        // Query a point at the new distance value
+        const point1 = path1.getPointAtLength(val1.distance);
+        // Update the circle coordinates
+        circle1.setAttribute('cx', point1.x);
+        circle1.setAttribute('cy', point1.y);
+		// Check if the two circles are touching
+        const dx = circle1.getAttribute('cx') - circle.getAttribute('cx');
+        const dy = circle1.getAttribute('cy') - circle.getAttribute('cy');
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const radiusSum = parseInt(circle.getAttribute('r')) + parseInt(circle1.getAttribute('r'));
+        if (distance <= radiusSum && lol === true) {
+          // Display a game over message
+          const gameOver = document.createElementNS("http://www.w3.org/2000/svg", "text");
+          gameOver.setAttribute("x", "50%");
+          gameOver.setAttribute("y", "50%");
+          gameOver.setAttribute("text-anchor", "middle");
+          gameOver.setAttribute("font-size", "50px");
+          gameOver.setAttribute("fill", "black");
+          gameOver.textContent = "Game Over!";
+          svg.appendChild(gameOver);
+          // Stop the animation
+          gsap.killTweensOf(val1);
+		  lol = false;
+		  spacePressed = false;
+          animationStarted = false;
+		  
+        }
+      }
+    });
+    animationStarted = true;
+  }
+};
+
+
+// Wait 3 seconds before starting the animation
+let spacePressed = false;
+
+document.addEventListener('keydown', event => {
+  if (event.code === 'Space' && lol === true) {
+    spacePressed = true;
+    setTimeout(() => {
+      if (spacePressed) {
+        svg.appendChild(circle1);
+        startAnimation();
+      }
+    }, 3000);
+  }
+});
+
+
+
+  
+</script>
+
+
+</body>
+</html>
